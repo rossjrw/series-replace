@@ -9,3 +9,4 @@ pylintrc
 .cache
 Pipfile.lock
 node_modules
+dist
