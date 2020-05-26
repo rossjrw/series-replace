@@ -30,7 +30,8 @@ now, rulesets are probably going to made purely with URL query parameters.
 I'm also going to using this project as an experiment into Typescript, Vue.js
 and Webpack; which hopefully explains why the whole thing is so unnecessarily
 complex. I've previously used Coffeescript, AngularJS and Gulp.js and found
-them to be a little unwieldy. So this should be fun.
+them to be a little unwieldy. So this should be fun. This is also my first
+foray into GitHub Projects, CI and GitHub Actions.
 
 ## Usage
 
