@@ -24,6 +24,7 @@ jobs:
  
     - name: Install and Build
       run: |
+        npm install
         gulp
  
     - name: Deploy
