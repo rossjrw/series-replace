@@ -36,6 +36,7 @@
     "postcss": "^7.0.31",
     "postcss-grid-kiss": "^2.3.0",
     "typescript": "^3.9.3",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "webpack": "^4.43.0"
   }
 }
