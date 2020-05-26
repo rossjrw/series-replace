@@ -1,7 +1,8 @@
 const gulp = require('gulp');
+const log = require('fancy-log');
+const rename = require('gulp-rename');
 const ts = require('gulp-typescript');
 const babel = require('gulp-babel');
-const log = require('fancy-log');
 const postcss = require('gulp-postcss');
 const postcssGridKiss = require('postcss-grid-kiss');
 const sass = require('gulp-sass');
@@ -10,7 +11,7 @@ sass.compiler = require('node-sass');
 gulp.task('js', function(done) {
   gulp.src('./src/*.ts')
     .pipe(ts({
-      noImplictAny: true,
+      noImplicitAny: true,
       outFile: 'output.js',
     }))
     .pipe(babel({presets: ['@babel/env']}))
@@ -26,7 +27,6 @@ gulp.task('css', function(done) {
       postcssGridKiss(),
       // cssnano(),
     ]))
-    .on('end', () => log("Post-processing CSS"))
     .pipe(rename("index.css"))
     .pipe(gulp.dest('./dist/'))
     .on('end', () => done());
