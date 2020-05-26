@@ -4,7 +4,8 @@
   "description": "Make a series of regex find-and-replace's.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -23,18 +24,32 @@
   "browserslist": "cover 99.5%",
   "devDependencies": {
     "@babel/core": "^7.9.6",
-    "babel-preset-env": "^1.7.0",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-typescript": "^7.9.0",
+    "babel-loader": "^8.1.0",
     "bulma": "^0.8.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.5.3",
     "fancy-log": "^1.3.3",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0-beta.2",
-    "gulp-postcss": "^8.0.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
-    "gulp-typescript": "^6.0.0-alpha.1",
+    "fibers": "^5.0.0",
+    "html-webpack-plugin": "^4.3.0",
     "node-sass": "^4.14.1",
     "postcss": "^7.0.31",
     "postcss-grid-kiss": "^2.3.0",
-    "typescript": "^3.9.3"
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^1.2.1",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.3",
+    "vue": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-typescript"
+    ]
   }
 }
