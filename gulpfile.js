@@ -1,12 +1,15 @@
 const gulp = require('gulp');
+
 const log = require('fancy-log');
 const rename = require('gulp-rename');
+
 const ts = require('gulp-typescript');
 const babel = require('gulp-babel');
-const postcss = require('gulp-postcss');
-const postcssGridKiss = require('postcss-grid-kiss');
+
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
+const postcss = require('gulp-postcss');
+const postcssGridKiss = require('postcss-grid-kiss');
 
 gulp.task('js', function(done) {
   gulp.src('./src/*.ts')
@@ -20,7 +23,6 @@ gulp.task('js', function(done) {
 });
 
 gulp.task('css', function(done) {
-  // Post-process, minify and concatenate css files
   gulp.src('./src/root.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([
