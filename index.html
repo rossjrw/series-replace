@@ -5,29 +5,44 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <section class="hero is-light">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1">Regex Series Replace</h1>
+        <h3 class="subtitle is-3">Make a series of regex find-and-replacements.</h3>
+      </div>
+    </div>
+  </section>
   <section class="section">
     <div class="container">
       <form>
         <div class="field is-horizontal">
           <div class="field-body">
             <div class="field">
+              <label class="label">Input</label>
               <div class="control is-expanded">
                 <textarea class="textarea"
                           placeholder="Input text"></textarea>
               </div>
+              <p>Paste the text you want replaced here.</p>
             </div>
             <div class="field">
+              <label class="label">Output</label>
               <div class="control is-expanded">
                 <textarea readonly
                           class="textarea"
                           placeholder="Output text"></textarea>
               </div>
+              <p>The replaced text will appear here.</p>
             </div>
           </div>
         </div>
+
+        <hr>
         <div class="field is-horizontal">
           <div class="field-body">
             <div class="field">
+              <label class="label">Find</label>
               <div class="control is-expanded">
                 <input class="input"
                        type="text"
@@ -35,6 +50,7 @@
               </div>
             </div>
             <div class="field">
+              <label class="label">Replace</label>
               <div class="control is-expanded">
                 <input class="input"
                        type="text"
@@ -43,6 +59,7 @@
             </div>
           </div>
         </div>
+
       </form>
     </div>
   </section>
