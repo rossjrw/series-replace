@@ -1,0 +1,23 @@
+{
+  "name": "series-replace",
+  "version": "0.0.1",
+  "description": "Make a series of regex find-and-replace's.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossjrw/series-replace.git"
+  },
+  "keywords": [
+    "regex",
+    "find-and-replace"
+  ],
+  "author": "Ross Williams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rossjrw/series-replace/issues"
+  },
+  "homepage": "https://github.com/rossjrw/series-replace#readme"
+}
