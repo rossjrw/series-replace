@@ -22,10 +22,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: "Output Management",
-      template: './src/index.html',
-    }),
+    new HtmlWebpackPlugin(),
   ],
   output: {
     filename: 'bundle.js',
