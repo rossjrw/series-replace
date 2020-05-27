@@ -16,11 +16,11 @@
 </template>
 
 <script lang="ts">
-import Corner from './components/Corner.vue'
-import Footer from './components/Footer.vue'
-import Header from './components/Header.vue'
-import InputOutput from './components/IO.vue'
-import Ruleset from './components/Ruleset.vue'
+import Corner from '@/components/Corner.vue'
+import Footer from '@/components/Footer.vue'
+import Header from '@/components/Header.vue'
+import InputOutput from '@/components/IO.vue'
+import Ruleset from '@/components/Ruleset.vue'
 
 export default {
   name: "App",
