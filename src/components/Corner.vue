@@ -1,3 +1,4 @@
+<!-- http://tholman.com/github-corners/ -->
 <template>
 	<a href="https://github.com/rossjrw/series-replace"
 		 target="_blank"
