@@ -15,8 +15,10 @@ jobs:
       run: |
         npm install
         npm run build
- 
+
+  deploy:
     - name: Deploy
+      if: github.ref == 'refs/heads/master'
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
