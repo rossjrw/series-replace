@@ -36,3 +36,11 @@ foray into GitHub Projects, CI and GitHub Actions.
 ## Usage
 
 Head along to [the tool](https://rossjrw.github.io/series-replace).
+
+## Development
+
+```shell
+npm install
+npm run build
+xdg-open dist/index.html
+```
