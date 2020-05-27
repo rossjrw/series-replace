@@ -17,6 +17,8 @@ jobs:
         npm run build
 
   deploy:
+    runs-on: ubuntu-latest
+    steps:
     - name: Deploy
       if: github.ref == 'refs/heads/master'
       uses: JamesIves/github-pages-deploy-action@releases/v3
