@@ -22,7 +22,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Series Replace",
+      template: "./src/index.html",
+    }),
   ],
   output: {
     filename: 'bundle.js',
