@@ -6,12 +6,25 @@ import App from './App.vue'
 Vue.use(Vuex)
 
 let store = new Vuex.Store({
+  strict: process.env.NODE_ENV !== 'production',
   state: {
     input_text: "",
     output_text: "",
-    rules: [],
+    rules: [
+      {
+        find: "",
+        replacement: "",
+      }
+    ]
   },
-  strict: process.env.NODE_ENV !== 'production'
+  mutations: {
+    update_find(state, value) {
+      state.rules[0].find = value
+    },
+    update_replacement(state, value) {
+      state.rules[0].replacement = value
+    }
+  }
 })
 
 let vm = new Vue({
