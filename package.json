@@ -1,7 +1,7 @@
 {
   "name": "series-replace",
   "version": "0.0.1",
-  "description": "Make a series of regex find-and-replace's.",
+  "description": "Make a series of regex find-and-replacements.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
