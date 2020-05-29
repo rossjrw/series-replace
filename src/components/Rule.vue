@@ -6,7 +6,8 @@
         <div class="control is-expanded">
           <input class="input"
                  type="text"
-                 placeholder="Regular expression">
+                 placeholder="Regular expression"
+                 v-model="find">
         </div>
       </div>
       <div class="field">
@@ -14,9 +15,22 @@
         <div class="control is-expanded">
           <input class="input"
                  type="text"
-                 placeholder="Replacement text">
+                 placeholder="Replacement text"
+                 v-model="replace">
         </div>
       </div>
     </div>
   </div>
 </template>
+
+<script type="ts">
+export default {
+  name: 'Rule',
+  data() {
+    return {
+      find: "",
+      replace: ""
+    }
+  }
+}
+</script>

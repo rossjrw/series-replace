@@ -1,5 +1,10 @@
 <template>
-  <Rule></Rule>
+  <div>
+    <div v-for="">
+      <Rule></Rule>
+    </div>
+    <div></div>
+  </div>
 </template>
 
 <script type="ts">
