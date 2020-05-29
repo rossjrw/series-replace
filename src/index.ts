@@ -10,7 +10,8 @@ let store = new Vuex.Store({
     input_text: "",
     output_text: "",
     rules: [],
-  }
+  },
+  strict: process.env.NODE_ENV !== 'production'
 })
 
 let vm = new Vue({
