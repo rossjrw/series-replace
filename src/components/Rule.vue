@@ -29,7 +29,7 @@
         </p>
       </div>
       <div class="field is-narrow">
-        <a class="button is-static">
+        <a class="button is-static handle">
           <span class="icon">
             <font-awesome-icon icon="grip-lines"/>
           </span>
