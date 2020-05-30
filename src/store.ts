@@ -1,6 +1,8 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import { State, RuleList, Rule, RuleUpdate, RuleId } from "./types"
+import { v4 as uuid } from "uuid"
+
+import { State, RuleList, Rule, RuleUpdate } from "./types"
 
 Vue.use(Vuex)
 
@@ -29,7 +31,7 @@ export default new Vuex.Store({
     addRule(state: State) {
       // Add a new rule
     },
-    removeRule(state: State, ruleId: RuleId) {
+    removeRule(state: State, ruleId: string) {
       // Remove a given rule
     }
   }
