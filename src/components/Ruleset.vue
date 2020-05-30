@@ -3,11 +3,13 @@
     <Draggable v-model="ruleList"
                v-bind="dragOptions"
                @start="drag = true"
-               @end="drag = false">
+               @end="drag = false"
+               handle=".handle">
       <transition-group type="transition"
                         :name="!drag ? 'flip-list' : null">
         <div v-for="rule in ruleList"
-             :key="rule.id">
+             :key="rule.id"
+             class="field is-horizontal">
           <Rule :find="rule.find"
                 :replacement="rule.replacement">
           </Rule>
