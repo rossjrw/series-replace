@@ -14,9 +14,14 @@ export default new Vuex.Store({
     rules: [
       {
         id: 0,
-        find: "",
+        find: "One",
         replacement: "",
-      }
+      },
+      {
+        id: 1,
+        find: "Two",
+        replacement: "",
+      },
     ]
   } as State,
   mutations: {
