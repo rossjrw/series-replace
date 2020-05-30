@@ -1,8 +1,11 @@
 <template>
   <div>
-    <div v-for="rule in rules">
-      <Rule :find.sync="rule.find"
-            :replacement.sync="rule.replacement">
+    <div v-for="(rule, index) in rules"
+         :key="index">
+      <Rule :find="rule.find"
+            :replacement="rule.replacement"
+            @update:find="update_find(rule.find, index)"
+            @update:replacement="update_replacement(rule.replacement, index)">
       </Rule>
     </div>
     <div></div>
