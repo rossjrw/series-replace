@@ -3,8 +3,7 @@
     <Draggable v-model="ruleList"
                v-bind="dragOptions"
                @start="drag = true"
-               @end="drag = false"
-               tag="ul">
+               @end="drag = false">
       <transition-group type="transition"
                         :name="!drag ? 'flip-list' : null">
         <div v-for="rule in ruleList"
