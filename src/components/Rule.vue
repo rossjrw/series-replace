@@ -1,24 +1,32 @@
 <template>
   <div class="field is-horizontal">
     <div class="field-body">
-      <div class="field">
-        <label class="label">Find</label>
-        <div class="control is-expanded">
+      <div class="field has-addons">
+        <p class="control">
+          <a class="button is-static">
+            Find
+          </a>
+        </p>
+        <p class="control is-expanded">
           <input class="input"
                  type="text"
                  placeholder="Regular expression"
                  :value="find">
-        </div>
+        </p>
       </div>
-      <div class="field">
-        <label class="label">Replace</label>
-        <div class="control is-expanded">
+      <div class="field has-addons">
+        <p class="control">
+          <a class="button is-static">
+            Replace
+          </a>
+        </p>
+        <p class="control is-expanded">
           <input class="input"
                  type="text"
                  placeholder="Replacement text"
                  :value="replacement"
                  @input="update_replacement">
-        </div>
+        </p>
       </div>
     </div>
   </div>
