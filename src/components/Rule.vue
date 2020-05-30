@@ -31,14 +31,14 @@
       <div class="field is-narrow">
         <a class="button is-static">
           <span class="icon">
-            <i class="fas fa-grip-lines"></i>
+            <font-awesome-icon icon="grip-lines"/>
           </span>
         </a>
       </div>
       <div class="field is-narrow">
-        <a class="button">
+        <a class="button is-danger is-outlined">
           <span class="icon">
-            <i class="fas fa-grip-lines"></i>
+            <font-awesome-icon icon="times"/>
           </span>
         </a>
       </div>
@@ -47,6 +47,11 @@
 </template>
 
 <script type="ts">
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGripLines, faTimes } from '@fortawesome/free-solid-svg-icons'
+ 
+library.add(faGripLines, faTimes)
+
 export default {
   name: "Rule",
   props: ['find', 'replacement'],
