@@ -28,6 +28,20 @@
                  @input="update_replacement">
         </p>
       </div>
+      <div class="field is-narrow">
+        <a class="button is-static">
+          <span class="icon">
+            <i class="fas fa-grip-lines"></i>
+          </span>
+        </a>
+      </div>
+      <div class="field is-narrow">
+        <a class="button">
+          <span class="icon">
+            <i class="fas fa-grip-lines"></i>
+          </span>
+        </a>
+      </div>
     </div>
   </div>
 </template>
