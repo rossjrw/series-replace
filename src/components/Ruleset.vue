@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div v-for="">
-      <Rule></Rule>
+    <div v-for="rule in rules">
+      <Rule :find.sync="rule.find"
+            :replacement.sync="rule.replacement">
+      </Rule>
     </div>
     <div></div>
   </div>
@@ -9,10 +11,17 @@
 
 <script type="ts">
 import Rule from '@/components/Rule.vue'
+import { mapState } from "vuex"
 
 export default {
+  name: "Ruleset",
   components: {
-    Rule: Rule,
-  }
+    Rule
+  },
+  computed: {
+    ...mapState({
+      rules: state => state.rules
+    })
+  },
 }
 </script>
