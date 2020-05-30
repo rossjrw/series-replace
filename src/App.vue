@@ -25,7 +25,7 @@ import Ruleset from '@/components/Ruleset.vue'
 export default {
   name: "App",
   components: {
-    Corners, Footer, Header, InputOutput, Ruleset
+    Corner, Footer, Header, InputOutput, Ruleset
   },
 }
 </script>
