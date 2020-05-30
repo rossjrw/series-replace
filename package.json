@@ -43,6 +43,7 @@
     "style-loader": "^1.2.1",
     "ts-loader": "^7.0.5",
     "typescript": "^3.9.3",
+    "uuid": "^8.1.0",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.2",
     "vue-style-loader": "^4.1.2",
