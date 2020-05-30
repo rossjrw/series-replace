@@ -5,12 +5,15 @@
                @start="drag = true"
                @end="drag = false"
                tag="ul">
-      <div v-for="(rule, index) in rules"
-           :key="index">
-        <Rule :find="rule.find"
-              :replacement="rule.replacement">
-        </Rule>
-      </div>
+      <transition-group type="transition"
+                        :name="!drag ? 'flip-list' : null">
+        <div v-for="rule in ruleList"
+             :key="rule.id">
+          <Rule :find="rule.find"
+                :replacement="rule.replacement">
+          </Rule>
+        </div>
+      </transition-group>
     </Draggable>
     <div></div><!-- what was this for? -->
   </div>
@@ -25,6 +28,11 @@ export default {
   name: "Ruleset",
   components: {
     Rule, Draggable
+  },
+  data() {
+    return {
+      drag: false
+    }
   },
   computed: {
     ruleList: {
@@ -48,9 +56,6 @@ export default {
 </script>
 
 <style>
-.button {
-  margin-top: 35px;
-}
 .flip-list-move {
   transition: transform 0.5s;
 }
@@ -60,9 +65,6 @@ export default {
 .ghost {
   opacity: 0.5;
   background: #c8ebfb;
-}
-.list-group {
-  min-height: 20px;
 }
 .list-group-item {
   cursor: move;

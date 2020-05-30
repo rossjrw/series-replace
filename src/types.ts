@@ -1,20 +1,16 @@
 export interface State {
   inputText: string
   outputText: string
-  rules: RuleList
-}
-
-export interface RuleList {
-  [key: string]: Rule
+  rules: Array<Rule>
 }
 
 export interface Rule {
   find: string
   replacement: string
-  order: number
+  id: number
 }
 
 export interface RuleUpdate {
-  ruleId: string
+  ruleId: number
   value: string
 }

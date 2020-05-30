@@ -2,7 +2,7 @@ import Vue from "vue"
 import Vuex from "vuex"
 import { v4 as uuid } from "uuid"
 
-import { State, RuleList, Rule, RuleUpdate } from "./types"
+import { State, Rule, RuleUpdate } from "./types"
 
 Vue.use(Vuex)
 
@@ -11,13 +11,13 @@ export default new Vuex.Store({
   state: {
     inputText: "",
     outputText: "",
-    rules: {
-      "0000-0000-0000-0000": {
+    rules: [
+      {
+        id: 0,
         find: "",
         replacement: "",
-        order: 0,
       }
-    },
+    ]
   } as State,
   mutations: {
     updateFind(state: State, { ruleId, value }: RuleUpdate) {
@@ -33,6 +33,10 @@ export default new Vuex.Store({
     },
     removeRule(state: State, ruleId: string) {
       // Remove a given rule
+    },
+    updateList(state: State, payload) {
+      // Update list order via Vue.Draggable
+      state.rules = payload
     }
   }
 })
