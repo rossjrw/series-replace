@@ -11,18 +11,7 @@ export default new Vuex.Store({
   state: {
     inputText: "",
     outputText: "",
-    rules: [
-      {
-        id: 0,
-        find: "One",
-        replacement: "",
-      },
-      {
-        id: 1,
-        find: "Two",
-        replacement: "",
-      },
-    ]
+    rules: []
   } as State,
   mutations: {
     updateFind(state: State, { ruleId, value }: RuleUpdate) {
