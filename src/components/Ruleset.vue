@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ruleset">
     <Draggable v-model="ruleList"
                v-bind="dragOptions"
                @start="drag = true"
