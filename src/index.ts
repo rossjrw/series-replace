@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 import App from './App.vue'
 import store from './store'
+import { getDataFromUrl } from './query-url'
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -14,4 +15,7 @@ let vm = new Vue({
   components: { App },
   render: h => h(App),
   store,
+  created() {
+    getDataFromUrl()
+  }
 })
