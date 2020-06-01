@@ -33,6 +33,10 @@ export default new Vuex.Store({
       // Update the "replace" field of a given rule
       state.rules[ruleId].replacement = value
     },
+    updateInputText(state: State, value: string) {
+      // Update the input text
+      state.inputText = value
+    },
     addRule(state: State) {
       // Add a new rule
     },
