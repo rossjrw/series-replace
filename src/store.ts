@@ -11,20 +11,14 @@ export default new Vuex.Store({
   state: {
     inputText: "",
     outputText: "",
-    rules: [
-      {
-        id: 0,
-        find: "One",
-        replacement: "",
-      },
-      {
-        id: 1,
-        find: "Two",
-        replacement: "",
-      },
-    ]
+    rules: []
   } as State,
   mutations: {
+    initialRules(state: State, payload: [Rule[], string]) {
+      // New list of rules
+      state.rules = payload[0]
+      state.inputText = payload[1]
+    },
     updateFind(state: State, { ruleId, value }: RuleUpdate) {
       // Update the "find" field of a given rule
       state.rules[ruleId].find = value
@@ -32,6 +26,10 @@ export default new Vuex.Store({
     updateReplacement(state: State, { ruleId, value }: RuleUpdate) {
       // Update the "replace" field of a given rule
       state.rules[ruleId].replacement = value
+    },
+    updateInputText(state: State, value: string) {
+      // Update the input text
+      state.inputText = value
     },
     addRule(state: State) {
       // Add a new rule

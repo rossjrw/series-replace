@@ -15,7 +15,7 @@ let vm = new Vue({
   components: { App },
   render: h => h(App),
   store,
-  created() {
-    getDataFromUrl()
+  mounted() {
+    this.$store.commit("initialRules", getDataFromUrl(location.search))
   }
 })
