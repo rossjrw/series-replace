@@ -14,6 +14,11 @@ export default new Vuex.Store({
     rules: []
   } as State,
   mutations: {
+    initialRules(state: State, payload: [Rule[], string]) {
+      // New list of rules
+      state.rules = payload[0]
+      state.inputText = payload[1]
+    },
     updateFind(state: State, { ruleId, value }: RuleUpdate) {
       // Update the "find" field of a given rule
       state.rules[ruleId].find = value
