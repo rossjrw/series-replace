@@ -26,7 +26,6 @@ export function getDataFromUrl(loc: string): [Rule[], string] {
       }
     }
   )
-  console.log(rules, inputText)
   return [rules, inputText]
 }
 
