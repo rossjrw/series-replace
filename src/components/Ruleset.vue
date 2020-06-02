@@ -41,7 +41,7 @@ export default {
         return this.$store.state.rules
       },
       set(value) {
-        this.$store.commit("updateList", value)
+        this.$store.commit("updateAllRules", value)
       }
     },
     dragOptions() {

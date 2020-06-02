@@ -39,7 +39,7 @@ export default new Vuex.Store({
     removeRule(state: State, ruleId: string) {
       // Remove a given rule
     },
-    updateList(state: State, payload) {
+    updateAllRules(state: State, payload) {
       // Update list order via Vue.Draggable
       state.rules = payload
     }
