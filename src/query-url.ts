@@ -20,8 +20,8 @@ export function getDataFromUrl(loc: string): [Rule[], string] {
   const rules: Rule[] = zip(parsed.f, parsed.r).map(
     (fr, index) => {
       return {
-        find: fr[0] || "",
-        replacement: fr[1] || "",
+        find: fr[0] ?? "",
+        replacement: fr[1] ?? "",
         id: index
       }
     }
