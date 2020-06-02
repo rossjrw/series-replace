@@ -1,6 +1,5 @@
 import Vue from "vue"
 import Vuex from "vuex"
-import { v4 as uuid } from "uuid"
 
 import { State, Rule, RuleUpdate } from "./types"
 
