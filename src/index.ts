@@ -16,6 +16,6 @@ let vm = new Vue({
   render: h => h(App),
   store,
   created() {
-    getDataFromUrl()
+    getDataFromUrl(location.search)
   }
 })
