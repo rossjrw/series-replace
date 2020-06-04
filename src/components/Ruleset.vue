@@ -43,7 +43,7 @@ export default {
         return this.$store.state.rules
       },
       set(newRules: Rule[]): void {
-        this.$store.commit("updateAllRules", newRules)
+        this.$store.dispatch("updateAllRules", newRules)
       }
     },
     dragOptions() {
