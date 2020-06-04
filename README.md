@@ -37,6 +37,8 @@ foray into GitHub Projects, CI and GitHub Actions.
 
 Head along to [the tool](https://rossjrw.github.io/series-replace).
 
+Or see a [usage example](https://rossjrw.github.io/series-replace?i=Paste%20the%20text%20you%20want%20replaced%20here.&f=%5E.%28.%29%5Ba-z%5D%2A%5Cs.%28he%29%5Cs%28%5Cw%2A%29.%2A%3F%28%5Ber%5D%7B2%7D%28.%29%5Ba-z%5D%2Bd%29&r=T%242%20%244%20%243%20will%20%241p%245e%241r).
+
 ## Development
 
 ```shell
