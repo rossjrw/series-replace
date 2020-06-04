@@ -9,13 +9,13 @@ import { getDataFromUrl } from './query-url'
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-let vm = new Vue({
+const vm = new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
   render: h => h(App),
   store,
   mounted() {
-    this.$store.commit("initialRules", getDataFromUrl(location.search))
+    this.$store.dispatch("initialRules", getDataFromUrl(location.search))
   }
 })
