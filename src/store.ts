@@ -1,9 +1,15 @@
 import Vue from "vue"
 import Vuex from "vuex"
+import { max } from "lodash"
 
-import { State, Rule, RuleUpdate } from "./types"
+import { State, Rule } from './types'
+import { execute } from './replace'
 
 Vue.use(Vuex)
+
+function pickNewRuleId(rules: Rule[]): number {
+  return max(rules.map(rule => rule.id)) + 1
+}
 
 export default new Vuex.Store({
   strict: process.env.NODE_ENV !== 'production',
@@ -13,32 +19,64 @@ export default new Vuex.Store({
     rules: []
   } as State,
   mutations: {
-    initialRules(state: State, payload: [Rule[], string]) {
+    executeRules(state: State) {
+      state.outputText = execute(state.inputText, state.rules)
+    },
+    modifyInput(state: State, newInput: string) {
+      state.inputText = newInput
+    },
+    addRule(state: State, rule: Rule) {
+      state.rules.push(rule)
+    },
+    setRule(state: State, rule: Rule) {
+      const index: number = state.rules.findIndex(
+        oldRule => oldRule.id === rule.id
+      )
+      state.rules[index] = rule
+    },
+    removeRule(state: State, ruleId: number) {
+      state.rules = state.rules.filter(rule => rule.id !== ruleId)
+    },
+    replaceAllRules(state: State, rules: Rule[]) {
+      state.rules = rules
+    }
+  },
+  actions: {
+    async initialRules({ commit, dispatch }, { rules, inputText }:
+                         { rules: Rule[], inputText: string }) {
       // New list of rules
-      state.rules = payload[0]
-      state.inputText = payload[1]
+      await dispatch("updateInputText", inputText)
+      for (const rule of rules) {
+        await dispatch("addRule", rule)
+      }
+      commit("executeRules")
     },
-    updateFind(state: State, { ruleId, value }: RuleUpdate) {
+    updateRule({ commit }, rule: Rule) {
       // Update the "find" field of a given rule
-      state.rules[ruleId].find = value
+      commit("setRule", rule)
+      commit("executeRules")
     },
-    updateReplacement(state: State, { ruleId, value }: RuleUpdate) {
-      // Update the "replace" field of a given rule
-      state.rules[ruleId].replacement = value
-    },
-    updateInputText(state: State, value: string) {
+    updateInputText({ commit }, inputText: string) {
       // Update the input text
-      state.inputText = value
+      commit("modifyInput", inputText)
+      commit("executeRules")
     },
-    addRule(state: State) {
+    addRule({ commit, state }, { find="", replace="" }:
+              { find: string, replace: string }) {
       // Add a new rule
+      const ruleId: number = pickNewRuleId(state.rules)
+      commit("addRule", { find, replace, ruleId })
+      commit("executeRules")
     },
-    removeRule(state: State, ruleId: string) {
+    removeRule({ commit }, ruleId: number) {
       // Remove a given rule
+      commit("removeRule", ruleId)
+      commit("executeRules")
     },
-    updateAllRules(state: State, payload) {
+    updateAllRules({ commit }, rules: Rule[]) {
       // Update list order via Vue.Draggable
-      state.rules = payload
+      commit("replaceAllRules", rules)
+      commit("executeRules")
     }
   }
 })
