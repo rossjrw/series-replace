@@ -9,9 +9,14 @@ interface ParsedUrl {
   r: string[]
 }
 
-export function getDataFromUrl(loc: string): [Rule[], string] {
+interface RulesAndString {
+  rules: Rule[]
+  inputText: string
+}
+
+export function getDataFromUrl(loc: string): RulesAndString {
   // Get the data state from the URL
-  let parsed: ParsedUrl = mapValues(
+  const parsed: ParsedUrl = mapValues(
     pick(parse(loc), ["i", "f", "r"]),
     value => castArray(value)
   )
@@ -21,12 +26,12 @@ export function getDataFromUrl(loc: string): [Rule[], string] {
     (fr, index) => {
       return {
         find: fr[0] ?? "",
-        replacement: fr[1] ?? "",
+        replace: fr[1] ?? "",
         id: index
       }
     }
   )
-  return [rules, inputText]
+  return {rules, inputText}
 }
 
 export function saveDataToUrl() {

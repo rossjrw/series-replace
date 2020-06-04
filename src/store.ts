@@ -42,12 +42,12 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async initialRules({ commit, dispatch }, { rules, inputText }:
+    initialRules({ commit, dispatch }, { rules, inputText }:
                          { rules: Rule[], inputText: string }) {
       // New list of rules
-      await dispatch("updateInputText", inputText)
+      commit("modifyInput", inputText)
       for (const rule of rules) {
-        await dispatch("addRule", rule)
+        commit("addRule", rule)
       }
       commit("executeRules")
     },
