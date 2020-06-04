@@ -1,36 +1,21 @@
 import './root.scss'
 import Vue from "vue"
-import Vuex from "vuex"
+
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 import App from './App.vue'
+import store from './store'
+import { getDataFromUrl } from './query-url'
 
-Vue.use(Vuex)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
-let store = new Vuex.Store({
-  strict: process.env.NODE_ENV !== 'production',
-  state: {
-    input_text: "",
-    output_text: "",
-    rules: [
-      {
-        find: "",
-        replacement: "",
-      }
-    ]
-  },
-  mutations: {
-    update_find(state, value) {
-      state.rules[0].find = value
-    },
-    update_replacement(state, value) {
-      state.rules[0].replacement = value
-    }
-  }
-})
-
-let vm = new Vue({
+const vm = new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
   render: h => h(App),
   store,
+  mounted() {
+    this.$store.dispatch("initialRules", getDataFromUrl(location.search))
+  }
 })
