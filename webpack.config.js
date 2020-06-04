@@ -11,12 +11,12 @@ module.exports = {
   },
   module: {
     rules: [
-			{
-				test: /\.vue$/,
-				use: [
+      {
+        test: /\.vue$/,
+        use: [
           'vue-loader',
         ],
-			},
+      },
       {
         test: /\.tsx?$/,
         use: 'babel-loader',
@@ -40,17 +40,17 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.js', '.vue'],
     alias: {
       '@': path.resolve('./src'),
     },
   },
   plugins: [
     new CleanWebpackPlugin(),
-		new VueLoaderPlugin(),
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       title: "Series Replace",
-			template: './src/template.ejs',
+      template: './src/template.ejs',
     }),
   ],
 };
