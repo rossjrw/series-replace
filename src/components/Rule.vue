@@ -11,7 +11,7 @@
              type="text"
              placeholder="Regular expression"
              :value="find"
-             @update="updateFind">
+             @input="updateFind">
       </p>
     </div>
     <div class="field has-addons">
