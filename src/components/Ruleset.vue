@@ -37,11 +37,11 @@ export default {
   },
   computed: {
     ruleList: {
-      get() {
+      get(): Rule[] {
         return this.$store.state.rules
       },
-      set(value) {
-        this.$store.commit("updateAllRules", value)
+      set(newRules: Rule[]): void {
+        this.$store.commit("updateAllRules", newRules)
       }
     },
     dragOptions() {
