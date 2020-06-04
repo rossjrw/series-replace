@@ -10,7 +10,8 @@
       <input class="input"
              type="text"
              placeholder="Regular expression"
-             :value="find">
+             :value="find"
+             @update="updateFind">
       </p>
     </div>
     <div class="field has-addons">
@@ -23,8 +24,8 @@
       <input class="input"
              type="text"
              placeholder="Replacement text"
-             :value="replacement"
-             @input="update_replacement">
+             :value="replace"
+             @input="updateReplace">
       </p>
     </div>
     <div class="field is-narrow">
@@ -52,13 +53,13 @@ library.add(faGripLines, faTimes)
 
 export default {
   name: "Rule",
-  props: ['find', 'replacement'],
+  props: ['find', 'replace', 'ruleId'],
   methods: {
-    update_find(new_find) {
-      this.$emit('update:find', new_find)
+    updateFind(newFind: string): void {
+      this.$emit('update:find', { newFind: newFind, id: this.ruleId })
     },
-    update_replacement(new_replacement) {
-      this.$emit('update:replacement', new_replacement)
+    updateReplace(newReplace: string): void {
+      this.$emit('update:replace', { newReplace: newReplace, id: this.ruleId })
     },
   }
 }
