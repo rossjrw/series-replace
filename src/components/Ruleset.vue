@@ -12,7 +12,7 @@
              class="field is-horizontal">
           <Rule :find="rule.find"
                 :replace="rule.replace"
-                @update="updateRule">
+                @update-rule="updateRule">
           </Rule>
         </div>
       </transition-group>

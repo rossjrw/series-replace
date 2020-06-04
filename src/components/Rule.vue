@@ -55,14 +55,14 @@ export default {
   name: "Rule",
   props: ['find', 'replace', 'ruleId'],
   methods: {
-    updateFind(newFind: string): void {
-      this.$emit('update',
-        { find: newFind, replace: this.replace, id: this.ruleId }
+    updateFind(e: InputEvent): void {
+      this.$emit('update-rule',
+        { find: e.target.value, replace: this.replace, id: this.ruleId }
       )
     },
-    updateReplace(newReplace: string): void {
-      this.$emit('update',
-        { find: this.find, replace: newReplace, id: this.ruleId }
+    updateReplace(e: InputEvent): void {
+      this.$emit('update-rule',
+        { find: this.find, replace: e.target.value, id: this.ruleId }
       )
     },
   }
