@@ -56,10 +56,14 @@ export default {
   props: ['find', 'replace', 'ruleId'],
   methods: {
     updateFind(newFind: string): void {
-      this.$emit('update:find', { newFind: newFind, id: this.ruleId })
+      this.$emit('update',
+        { find: newFind, replace: this.replace, id: this.ruleId }
+      )
     },
     updateReplace(newReplace: string): void {
-      this.$emit('update:replace', { newReplace: newReplace, id: this.ruleId })
+      this.$emit('update',
+        { find: this.find, replace: newReplace, id: this.ruleId }
+      )
     },
   }
 }

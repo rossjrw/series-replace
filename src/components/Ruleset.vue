@@ -12,8 +12,7 @@
              class="field is-horizontal">
           <Rule :find="rule.find"
                 :replace="rule.replace"
-                @update:find=""
-                @update:replace="">
+                @update="updateRule">
           </Rule>
         </div>
       </transition-group>
@@ -53,6 +52,11 @@ export default {
         disabled: false,
         ghostClass: "ghost"
       }
+    }
+  },
+  methods: {
+    updateRule(rule: Rule): void {
+      this.$store.dispatch("updateRule", rule)
     }
   }
 }
