@@ -9,5 +9,20 @@
     "lib": [
       "es2020"
     ]
-  }
+  },
+  "paths": {
+    "@/*": [
+      "src/*"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ],
+  "files": [
+    "src/shims-vue.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
