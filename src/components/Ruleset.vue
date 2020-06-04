@@ -11,7 +11,9 @@
              :key="rule.id"
              class="field is-horizontal">
           <Rule :find="rule.find"
-                :replacement="rule.replacement">
+                :replace="rule.replace"
+                @update:find=""
+                @update:replace="">
           </Rule>
         </div>
       </transition-group>

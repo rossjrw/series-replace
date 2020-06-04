@@ -6,11 +6,6 @@ export interface State {
 
 export interface Rule {
   find: string
-  replacement: string
+  replace: string
   id: number
-}
-
-export interface RuleUpdate {
-  ruleId: number
-  value: string
 }
