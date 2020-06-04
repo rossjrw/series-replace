@@ -32,7 +32,7 @@ export default new Vuex.Store({
       const index: number = state.rules.findIndex(
         oldRule => oldRule.id === rule.id
       )
-      state.rules[index] = rule
+      Vue.set(state.rules, index, rule)
     },
     removeRule(state: State, ruleId: number) {
       state.rules = state.rules.filter(rule => rule.id !== ruleId)
