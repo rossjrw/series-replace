@@ -41,7 +41,7 @@ export default {
     },
     outputText: {
       get(): string {
-        return this.$store.state.inputText
+        return this.$store.state.outputText
       }
     }
   }
