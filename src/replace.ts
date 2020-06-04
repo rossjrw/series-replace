@@ -1,6 +1,6 @@
 import { Rule } from './types'
 
-export default function execute(inputText: string, rules: Rule[]): string {
+export function execute(inputText: string, rules: Rule[]): string {
   let outputText: string
   for (let rule of rules) {
     outputText = inputText.replace(
