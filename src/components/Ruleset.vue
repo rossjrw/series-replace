@@ -12,6 +12,7 @@
              class="field is-horizontal">
           <Rule :find="rule.find"
                 :replace="rule.replace"
+                :ruleId="rule.id"
                 @update-rule="updateRule">
           </Rule>
         </div>
