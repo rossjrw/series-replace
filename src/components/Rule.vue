@@ -45,7 +45,7 @@
   </div>
 </template>
 
-<script type="ts">
+<script lang="ts">
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGripLines, faTimes } from '@fortawesome/free-solid-svg-icons'
  

@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script type="ts">
+<script lang="ts">
 import Draggable from "vuedraggable"
 
 import Rule from '@/components/Rule.vue'
