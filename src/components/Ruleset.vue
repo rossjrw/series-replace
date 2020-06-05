@@ -32,7 +32,7 @@ export default {
   components: {
     Rule, Draggable
   },
-  data() {
+  data(): Record<string,unknown> {
     return {
       drag: false
     }
@@ -46,7 +46,7 @@ export default {
         this.$store.dispatch("updateAllRules", newRules)
       }
     },
-    dragOptions() {
+    dragOptions(): Record<string,unknown> {
       return {
         animation: 200,
         group: "description",
