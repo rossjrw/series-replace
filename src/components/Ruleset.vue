@@ -18,12 +18,27 @@
         </div>
       </transition-group>
     </Draggable>
-    <div></div><!-- what was this for? -->
+    <hr>
+    <div class="field is-horizontal">
+      <div class="control">
+        <div class="button"
+             @click="addRule">
+          <span class="icon">
+            <font-awesome-icon icon="plus-circle"/>
+          </span>
+          <span>Add</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Draggable from "vuedraggable"
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+ 
+library.add(faPlusCircle)
 
 import Rule from '@/components/Rule.vue'
 
@@ -58,6 +73,9 @@ export default {
   methods: {
     updateRule(rule: Rule): void {
       this.$store.dispatch("updateRule", rule)
+    },
+    addRule(): void {
+      this.$store.dispatch("addRule", {})
     }
   }
 }
