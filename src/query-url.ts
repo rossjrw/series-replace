@@ -34,9 +34,10 @@ export function getDataFromUrl(loc: string): RulesAndString {
   return {rules, inputText}
 }
 
-export function saveDataToUrl(rules: Rule[], inputText: string): string {
+export function saveDataToUrl(rules: Rule[], inputText?: string): string {
   const f: string[] = rules.map(rule => rule.find)
   const r: string[] = rules.map(rule => rule.replace)
-  const rulesList = { f, r }
+  const i: string | undefined = inputText
+  const rulesList = { f, r, i }
   return stringify(rulesList)
 }

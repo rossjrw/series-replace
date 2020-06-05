@@ -4,7 +4,7 @@
     <Header></Header>
     <section class="section">
       <div class="container">
-        <form>
+        <form class="control">
           <InputOutput></InputOutput>
           <hr>
           <Ruleset></Ruleset>
