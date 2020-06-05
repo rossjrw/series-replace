@@ -22,7 +22,7 @@
                                readonly
                                :value="renderedUrl">
                       </p>
-                      <p class="control">
+                      <div class="control">
                         <div class="button is-info"
                                 @click="copyUrl">
                           <span class="icon">
@@ -30,7 +30,7 @@
                           </span>
                           <span>Copy</span>
                         </div>
-                      </p>
+                      </div>
                     </div>
                   </div>
                 </div>
