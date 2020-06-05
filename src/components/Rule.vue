@@ -36,7 +36,7 @@
       </a>
     </div>
     <div class="field is-narrow">
-      <a class="button is-danger is-outlined">
+      <a class="button is-danger">
         <span class="icon">
           <font-awesome-icon icon="times"/>
         </span>

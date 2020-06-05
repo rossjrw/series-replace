@@ -1,5 +1,5 @@
-import { parse } from "query-string"
-import { defaults, castArray, mapValues, pick, zip } from "lodash"
+import { parse, stringify } from "query-string"
+import { defaults, castArray, mapValues, pick, zip, zipObject } from "lodash"
 
 import { Rule } from './types'
 
@@ -34,6 +34,10 @@ export function getDataFromUrl(loc: string): RulesAndString {
   return {rules, inputText}
 }
 
-export function saveDataToUrl() {
-
+export function saveDataToUrl(rules: Rule[], inputText?: string): string {
+  const f: string[] = rules.map(rule => rule.find)
+  const r: string[] = rules.map(rule => rule.replace)
+  const i: string | undefined = inputText
+  const rulesList = { f, r, i }
+  return stringify(rulesList)
 }
