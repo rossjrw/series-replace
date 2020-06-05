@@ -36,7 +36,8 @@
       </a>
     </div>
     <div class="field is-narrow">
-      <a class="button is-danger">
+      <a class="button is-danger"
+         @click="removeRule">
         <span class="icon">
           <font-awesome-icon icon="times"/>
         </span>
@@ -65,6 +66,9 @@ export default {
         { find: this.find, replace: e.target.value, id: this.ruleId }
       )
     },
+    removeRule(): void {
+      this.$emit('remove-rule', this.ruleId)
+    }
   }
 }
 </script>
