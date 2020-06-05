@@ -8,7 +8,11 @@ import { execute } from './replace'
 Vue.use(Vuex)
 
 function pickNewRuleId(rules: Rule[]): number {
-  return max(rules.map(rule => rule.id)) + 1
+  if (rules.length) {
+    return max(rules.map(rule => rule.id)) + 1
+  } else {
+    return 0
+  }
 }
 
 export default new Vuex.Store({
