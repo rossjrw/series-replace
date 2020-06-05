@@ -18,9 +18,9 @@
         </div>
       </transition-group>
     </Draggable>
-    <hr>
-    <div class="field is-horizontal">
-      <div class="control">
+    <div id="addButtonContainer"
+         class="field">
+      <div class="control has-text-centered">
         <div class="button"
              @click="addRule">
           <span class="icon">
@@ -97,5 +97,8 @@ export default {
 }
 .list-group-item i {
   cursor: pointer;
+}
+#addButtonContainer {
+  margin-top: 0.75rem;
 }
 </style>
