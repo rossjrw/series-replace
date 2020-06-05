@@ -35,6 +35,8 @@ export function getDataFromUrl(loc: string): RulesAndString {
 }
 
 export function saveDataToUrl(rules: Rule[], inputText: string): string {
-  const rulesList = zipObject(["find", "replace"], rules)
-  console.log(rulesList)
+  const f: string[] = rules.map(rule => rule.find)
+  const r: string[] = rules.map(rule => rule.replace)
+  const rulesList = { f, r }
+  return stringify(rulesList)
 }
