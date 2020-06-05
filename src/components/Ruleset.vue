@@ -13,7 +13,8 @@
           <Rule :find="rule.find"
                 :replace="rule.replace"
                 :ruleId="rule.id"
-                @update-rule="updateRule">
+                @update-rule="updateRule"
+                @remove-rule="removeRule">
           </Rule>
         </div>
       </transition-group>
@@ -76,6 +77,9 @@ export default {
     },
     addRule(): void {
       this.$store.dispatch("addRule", {})
+    },
+    removeRule(ruleId: number): void {
+      this.$store.dispatch("removeRule", ruleId)
     }
   }
 }
