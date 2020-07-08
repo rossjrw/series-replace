@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Corner></Corner>
+    <GithubCorner></GithubCorner>
     <Header></Header>
     <section class="section">
       <div class="container">
@@ -17,7 +17,7 @@
 </template>
 
 <script lang="ts">
-import Corner from '@/components/Corner.vue'
+import GithubCorner from '@/components/GithubCorner.vue'
 import Header from '@/components/Header.vue'
 import InputOutput from '@/components/IO.vue'
 import Ruleset from '@/components/Ruleset.vue'
@@ -27,7 +27,7 @@ import Footer from '@/components/Footer.vue'
 export default {
   name: "App",
   components: {
-    Corner, Footer, Header, InputOutput, Ruleset, SaveRules
+    GithubCorner, Footer, Header, InputOutput, Ruleset, SaveRules
   },
 }
 </script>
