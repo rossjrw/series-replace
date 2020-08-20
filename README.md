@@ -37,7 +37,7 @@ foray into GitHub Projects, CI and GitHub Actions.
 
 Head along to [the tool](https://rossjrw.github.io/series-replace).
 
-Or see a usage example ([1](https://rossjrw.github.io/series-replace?i=Paste%20the%20text%20you%20want%20replaced%20here.&f=%5E.%28.%29%5Ba-z%5D%2A%5Cs.%28he%29%5Cs%28%5Cw%2A%29.%2A%3F%28%5Ber%5D%7B2%7D%28.%29%5Ba-z%5D%2Bd%29&r=T%242%20%244%20%243%20will%20%241p%245e%241r)) ([2](https://rossjrw.github.io/series-replace/?f=%5BA-z%5D&f=%28%E2%96%88%5B%E2%96%88%5Cs%5D%2B%29&r=%E2%96%88&r=%5B%5Bspan%20class%3D%22no%22%5D%5D%241%5B%5B%2Fspan%5D%5D)).
+Or see a usage example ([1](https://rossjrw.github.io/series-replace?i=Paste%20the%20text%20you%20want%20replaced%20here.&f=%5E.%28.%29%5Ba-z%5D%2A%5Cs.%28he%29%5Cs%28%5Cw%2A%29.%2A%3F%28%5Ber%5D%7B2%7D%28.%29%5Ba-z%5D%2Bd%29&r=T%242%20%244%20%243%20will%20%241p%245e%241r)) ([2](https://rossjrw.com/series-replace/?f=%5BA-z%5D&f=%28%3F%21%5Cs%29%28%5B%E2%96%88%5Cs%5D%2B%29%28%3F%3C%21%5Cs%29&i=Sam%2C%20I%20don%27t%20have%20much%20time.%20You%20need%20to%20tell%20Kseniya%20to%20stop%20research%20and%20to%20lock%20the%20file.%20Please%20do%20that%20for%20me.&r=%E2%96%88&r=%5B%5Bspan%20class%3D%22no%22%5D%5D%241%5B%5B%2Fspan%5D%5D)).
 
 ## Development
 
