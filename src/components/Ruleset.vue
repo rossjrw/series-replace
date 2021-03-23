@@ -12,6 +12,7 @@
              class="field is-horizontal">
           <Rule :find="rule.find"
                 :replace="rule.replace"
+                :enabled="rule.enabled"
                 :ruleId="rule.id"
                 @update-rule="updateRule"
                 @remove-rule="removeRule">
