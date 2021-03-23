@@ -71,7 +71,7 @@ export default new Vuex.Store({
               { find: string, replace: string }) {
       // Add a new rule
       const id: number = pickNewRuleId(state.rules)
-      commit("addRule", { find, replace, id })
+      commit("addRule", { find, replace, id, enabled: true })
       commit("executeRules")
     },
     removeRule({ commit }, ruleId: number) {
