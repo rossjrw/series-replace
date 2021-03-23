@@ -1,5 +1,12 @@
 <template>
   <div class="field-body">
+    <div class="field is-narrow">
+      <input class="mt-3"
+             type="checkbox"
+             checked
+             :value="enabled"
+             @input="updateEnabled">
+    </div>
     <div class="field has-addons">
       <p class="control">
       <a class="button is-static">
@@ -54,16 +61,36 @@ library.add(faGripLines, faTimes)
 
 export default {
   name: "Rule",
-  props: ['find', 'replace', 'ruleId'],
+  props: ['find', 'replace', 'enabled', 'ruleId'],
   methods: {
     updateFind(e: InputEvent): void {
       this.$emit('update-rule',
-        { find: e.target.value, replace: this.replace, id: this.ruleId }
+        {
+          find: e.target.value,
+          replace: this.replace,
+          enabled: this.enabled,
+          id: this.ruleId
+        }
       )
     },
     updateReplace(e: InputEvent): void {
       this.$emit('update-rule',
-        { find: this.find, replace: e.target.value, id: this.ruleId }
+        {
+          find: this.find,
+          replace: e.target.value,
+          enabled: this.enabled,
+          id: this.ruleId
+        }
+      )
+    },
+    updateEnabled(e: InputEvent): void {
+      this.$emit('update-rule',
+        { 
+          find: this.find,
+          replace: this.replace,
+          enabled: e.target.value,
+          id: this.ruleId
+        }
       )
     },
     removeRule(): void {
