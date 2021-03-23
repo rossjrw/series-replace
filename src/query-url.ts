@@ -27,6 +27,7 @@ export function getDataFromUrl(loc: string): RulesAndString {
       return {
         find: fr[0] ?? "",
         replace: fr[1] ?? "",
+        enabled: true,
         id: index
       }
     }

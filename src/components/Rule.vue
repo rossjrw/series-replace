@@ -1,7 +1,7 @@
 <template>
   <div class="field-body">
     <div class="field is-narrow">
-      <input class="mt-3"
+      <input style="margin-top: 0.8rem"
              type="checkbox"
              checked
              :value="enabled"
@@ -88,7 +88,7 @@ export default {
         { 
           find: this.find,
           replace: this.replace,
-          enabled: e.target.value,
+          enabled: e.target.checked,
           id: this.ruleId
         }
       )

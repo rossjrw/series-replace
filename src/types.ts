@@ -7,5 +7,6 @@ export interface State {
 export interface Rule {
   find: string
   replace: string
+  enabled: boolean
   id: number
 }

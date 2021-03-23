@@ -46,8 +46,10 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    initialRules({ commit }, { rules, inputText }:
-                         { rules: Rule[], inputText: string }) {
+    initialRules(
+      { commit },
+      { rules, inputText }: { rules: Rule[], inputText: string }
+    ) {
       // New list of rules
       commit("modifyInput", inputText)
       for (const rule of rules) {
