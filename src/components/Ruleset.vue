@@ -77,7 +77,7 @@ export default {
       this.$store.dispatch("updateRule", rule)
     },
     addRule(): void {
-      this.$store.dispatch("addRule", {})
+      this.$store.dispatch("addRule", {enabled: true})
     },
     removeRule(ruleId: number): void {
       this.$store.dispatch("removeRule", ruleId)
