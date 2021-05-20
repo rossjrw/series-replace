@@ -3,8 +3,7 @@
     <div class="field is-narrow">
       <input style="margin-top: 0.8rem"
              type="checkbox"
-             checked
-             :value="enabled"
+             :checked="enabled"
              @input="updateEnabled">
     </div>
     <div class="field has-addons">
